@@ -31,6 +31,20 @@ function invalidParam(param) {
   return invalid;
 }
 
+function result(param) {
+  let resp = {};
+
+  Object.keys(allDays()).forEach((day) => {
+    if (day === param) resp[day] = allDays()[day];
+  });
+
+  data.species.forEach((obj) => {
+    if (obj.name === param) resp = obj.availability;
+  });
+
+  return resp;
+}
+
 function getSchedule(scheduleTarget) {
   // seu código aqui
   if (scheduleTarget === undefined || invalidParam(scheduleTarget)) return allDays();
@@ -38,6 +52,8 @@ function getSchedule(scheduleTarget) {
   if (scheduleTarget === 'Monday') {
     return { Monday: { officeHour: 'CLOSED', exhibition: 'The zoo will be closed!' } };
   }
+
+  return result(scheduleTarget);
 }
 
 module.exports = getSchedule;
