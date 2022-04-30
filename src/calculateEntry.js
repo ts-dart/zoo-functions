@@ -1,7 +1,6 @@
 const data = require('../data/zoo_data');
 
 function countEntrants(entrants) {
-  // seu código aqui
   const childrens = entrants.filter((curr) => curr.age < 18);
   const adults = entrants.filter((curr) => curr.age >= 18 && curr.age < 50);
   const seniors = entrants.filter((curr) => curr.age >= 50);
@@ -14,7 +13,6 @@ function countEntrants(entrants) {
 }
 
 function calculateEntry(entrants) {
-  // seu código aqui
   if (entrants === undefined || Object.keys(entrants).length === 0) return 0;
 
   const visitors = countEntrants(entrants);

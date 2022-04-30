@@ -46,7 +46,6 @@ function result(param) {
 }
 
 function getSchedule(scheduleTarget) {
-  // seu código aqui
   if (scheduleTarget === undefined || invalidParam(scheduleTarget)) return allDays();
 
   if (scheduleTarget === 'Monday') {

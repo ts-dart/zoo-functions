@@ -1,14 +1,12 @@
 const data = require('../data/zoo_data');
 
 function isManager(id) {
-  // seu código aqui
   const manager = data.employees.map((obj) => obj.managers.filter((mId) => mId === id));
   const m = manager.some((curr) => curr[0] === id);
   return m;
 }
 
 function getRelatedEmployees(managerId) {
-  // seu código aqui
   if (isManager(managerId) === false) {
     throw new Error('O id inserido não é de uma pessoa colaboradora gerente!');
   }
